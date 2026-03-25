@@ -25,6 +25,18 @@
 }
 
 :root {
+  /* Light Mode Defaults */
+  --text: #374151;
+  --text-h: #111827;
+  --bg: #fcf9f8;
+  --border: #e5e7eb;
+  --code-bg: #f3f4f6;
+  --accent: #994700;
+  --accent-bg: rgba(153, 71, 0, 0.1);
+  --accent-border: rgba(153, 71, 0, 0.2);
+  --social-bg: #ffffff;
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+
   color: var(--text);
   background: var(--bg);
   font-synthesis: none;
@@ -37,9 +49,9 @@
   }
 }
 
-
-@media (prefers-color-scheme: dark) {
-  :root {
+/* Using .dark class to match your tailwind.config.js darkMode: "class" */
+@layer base {
+  .dark:root {
     --text: #9ca3af;
     --text-h: #f3f4f6;
     --bg: #16171d;
@@ -63,11 +75,8 @@ body {
 }
 
 #root {
-  width: 1126px;
   max-width: 100%;
   margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
   min-height: 100svh;
   display: flex;
   flex-direction: column;
@@ -117,3 +126,21 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+@layer components {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  .btn-primary-gradient {
+    background: linear-gradient(135deg, #ff7a00 0%, #994700 100%);
+  }
+
+  .ghost-border {
+    outline: 1px solid rgba(224, 192, 175, 0.15);
+  }
+}
+
+/* Ensure material symbols and fonts are loaded in your index.html */
