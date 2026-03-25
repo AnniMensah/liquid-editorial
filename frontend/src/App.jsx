@@ -13,13 +13,6 @@ function App() {
     <AuthProvider>
       <Router>
         <div className="App">
-          <nav>
-            <a href="/">Home</a>
-            <a href="/mixologists">Mixologists</a>
-            <a href="/bookings">Bookings</a>
-            <a href="/login">Login</a>
-            <a href="/register">Register</a>
-          </nav>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
