@@ -1,0 +1,49 @@
+import React, { createContext, useState, useEffect } from 'react';
+import api from '../services/api';
+
+export const AuthContext = createContext();
+
+export const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      // Verify token and get user
+      api.get('/auth/me')
+        .then(response => setUser(response.data))
+        .catch(() => localStorage.removeItem('token'))
+        .finally(() => setLoading(false));
+    } else {
+      setLoading(false);
+    }
+  }, []);
+
+  const login = async (email, password) => {
+    const response = await api.post('/auth/login', { email, password });
+    const { user, token } = response.data;
+    localStorage.setItem('token', token);
+    setUser(user);
+    return user;
+  };
+
+  const register = async (name, email, password, role) => {
+    const response = await api.post('/auth/register', { name, email, password, role });
+    const { user, token } = response.data;
+    localStorage.setItem('token', token);
+    setUser(user);
+    return user;
+  };
+
+  const logout = () => {
+    localStorage.removeItem('token');
+    setUser(null);
+  };
+
+  return (
+    <AuthContext.Provider value={{ user, login, register, logout, loading }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
