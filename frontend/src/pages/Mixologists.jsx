@@ -107,9 +107,9 @@ const Mixologists = () => {
                     <span key={index} className="px-3 py-1 rounded-full bg-secondary-container text-on-secondary-container text-[0.7rem] font-bold uppercase tracking-wider">{specialty}</span>
                   ))}
                 </div>
-                <button className="w-full py-4 rounded-xl border border-outline-variant/30 font-bold uppercase tracking-widest text-[0.75rem] hover:bg-on-surface hover:text-surface transition-all duration-300">
+                <Link to={`/profile/${mixologist._id}`} className="w-full py-4 rounded-xl border border-outline-variant/30 font-bold uppercase tracking-widest text-[0.75rem] hover:bg-on-surface hover:text-surface transition-all duration-300 block text-center">
                   View Profile
-                </button>
+                </Link>
               </div>
             </div>
           ))}
