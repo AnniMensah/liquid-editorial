@@ -2,21 +2,33 @@
 
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { TopNav } from '../components/layout/TopNav';
-import { Footer } from '../components/layout/Footer';
-import { GlassCard } from '../components/common/GlassCard'; 
-// import { Button } from '../components/common/Button'; 
-import { Rating } from '../components/common/Rating'; 
-import { mixologistData, servicePackages, reviews } from '../data/mockData';
+import TopNav from '../components/layout/TopNav';
+import Footer from '../components/layout/Footer';
+import GlassCard from '../components/common/GlassCard';
+import Rating from '../components/common/Rating';
+import { servicePackages } from '../data/mockData';
 
 const Profile = () => {
-  const { id } = useParams();
+  useParams();
   const navigate = useNavigate();
   const [selectedPackage, setSelectedPackage] = useState(null);
   const [selectedDate, setSelectedDate] = useState('');
   const [showBookingModal, setShowBookingModal] = useState(false);
   
-  const mixologist = mixologistData.find(m => m.id === parseInt(id)) || mixologistData[0];
+  const mixologist = {
+    name: 'Sample Mixologist',
+    rating: 4.9,
+    bio: 'Expert mixologist with years of experience.',
+    specialties: ['Classic Cocktails', 'Modern Mixology'],
+    portfolio: ['https://via.placeholder.com/400x300', 'https://via.placeholder.com/400x300'],
+    certifications: ['WSET Level 3', 'IBA Certified'],
+    heroImage: 'https://via.placeholder.com/1200x600?text=Mixologist+Hero',
+    avatar: 'https://via.placeholder.com/80?text=JM',
+    location: 'New York, NY',
+    experience: 8,
+    availableFrom: 'Immediately',
+    startingPrice: 250
+  };
 
   return (
     <div className="bg-surface">
@@ -32,7 +44,7 @@ const Profile = () => {
               <AboutSection mixologist={mixologist} />
               <SpecialtiesSection specialties={mixologist.specialties} />
               <PortfolioSection portfolio={mixologist.portfolio} />
-              <ReviewsSection reviews={reviews} />
+<ReviewsSection reviews={[]} />
             </div>
             <div className="lg:col-span-1">
               <BookingSidebar 

@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { TopNav } from '../components/layout/TopNav';
-import { Footer } from '../components/layout/Footer';
-import { Stepper } from '../components/common/Stepper';
+import  TopNav  from '../components/layout/TopNav';
+import  Footer  from '../components/layout/Footer';
+import  Stepper  from '../components/common/Stepper';
 import { PersonalDetailsStep } from '../components/forms/PersonalDetailsStep';
 import { ProfessionalProfileStep } from '../components/forms/ProfessionalProfileStep';
 import { KYCVerificationStep } from '../components/forms/KYCVerificationStep';

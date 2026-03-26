@@ -2,10 +2,10 @@
 
 import React from 'react';
 // import { useNavigate } from 'react-router-dom';
-import { Sidebar } from '../components/dashboard/Sidebar';
-import { StatsCard } from '../components/dashboard/StatsCard';
-import { GlassCard } from '../components/common/GlassCard';
-// import { Button } from '../Button.jsx';
+import Sidebar from '../components/dashboard/Sidebar';
+import StatsCard from '../components/dashboard/StatsCard';
+import GlassCard from '../components/common/GlassCard';
+
 import { currentUser, pendingRequests } from '../data/mockData';
 
 

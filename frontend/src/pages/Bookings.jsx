@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { TopNav } from '../components/layout/TopNav';
-import { Footer } from '../components/layout/Footer';
-import { GlassCard } from "../components/common/GlassCard";
-// import { Button } from "../components/common/Button.jsx";
-import { Input } from "../components/common/Input";
-import { Stepper } from "../components/common/Stepper";
+import TopNav from '../components/layout/TopNav';
+import Footer from '../components/layout/Footer';
+import GlassCard from "../components/common/GlassCard";
+
+import Input from "../components/common/Input";
+import Stepper from "../components/common/Stepper";
 import { servicePackages } from '../data/mockData';
 
 const bookingSteps = [
