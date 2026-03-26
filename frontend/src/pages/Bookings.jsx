@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { TopNav, Footer } from '../components/layout';
-import { GlassCard, Button, Input, Stepper } from '../components/common';
+import { TopNav } from '../components/layout/TopNav';
+import { Footer } from '../components/layout/Footer';
+import { GlassCard } from "../components/common/GlassCard";
+// import { Button } from "../components/common/Button.jsx";
+import { Input } from "../components/common/Input";
+import { Stepper } from "../components/common/Stepper";
 import { servicePackages } from '../data/mockData';
 
 const bookingSteps = [
@@ -37,13 +41,13 @@ const Bookings = () => {
   const renderStep = () => {
     switch (currentStep) {
       case 1:
-        return (
-          <PackageStep 
-            selectedPackage={bookingData.package}
-            onSelect={(pkg) => updateBookingData('package', pkg)}
-            onNext={nextStep}
-          />
-        );
+  return (
+    <PackageStep 
+      selectedPackage={bookingData.package}
+      onSelect={(pkg) => updateBookingData('package', pkg)}
+      onNext={nextStep}
+    />
+  );
       case 2:
         return (
           <DateTimeStep 
@@ -278,7 +282,7 @@ const DetailsStep = ({ data, onChange, onNext, onBack }) => (
   </div>
 );
 
-const PaymentStep = ({ data, onBack, onComplete }) => {
+const PaymentStep = ({ onBack, onComplete }) => {
   const [paymentMethod, setPaymentMethod] = useState('card');
   const [cardNumber, setCardNumber] = useState('');
   const [expiry, setExpiry] = useState('');

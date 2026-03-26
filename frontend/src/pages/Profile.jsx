@@ -1,7 +1,12 @@
+"use client";
+
 import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { TopNav, Footer } from '../components/layout';
-import { GlassCard, Button, Rating, Input } from '../components/common';
+import { TopNav } from '../components/layout/TopNav';
+import { Footer } from '../components/layout/Footer';
+import { GlassCard } from '../components/common/GlassCard'; 
+// import { Button } from '../components/common/Button'; 
+import { Rating } from '../components/common/Rating'; 
 import { mixologistData, servicePackages, reviews } from '../data/mockData';
 
 const Profile = () => {

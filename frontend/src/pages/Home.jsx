@@ -1,14 +1,20 @@
+"use client";
+
 import React from 'react';
 import { useNavigate, Link } from 'react-router-dom';   
-import { TopNav, Footer } from '../components/layout';
-import { GlassCard, Button, SearchBar, Rating } from '../components/common';
+import { TopNav } from '../components/layout/TopNav';
+import { Footer } from '../components/layout/Footer';
+import { GlassCard } from '../components/common/GlassCard';
+import { Button } from '../components/common/Button';
+import { SearchBar } from '../components/common/SearchBar';
+import { Rating } from '../components/common/Rating';
 import { featuredMixologists, categoryData, testimonials, blogPosts } from '../data/mockData';
 
 const HomePage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-surface">
+    <div className="bg-surface"> 
       <TopNav />
       <main className="pt-24">
         <HeroSection navigate={navigate} />

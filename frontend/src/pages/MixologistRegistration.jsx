@@ -1,7 +1,11 @@
 import { useState } from 'react';
-import { TopNav, Footer } from '../components/layout';
-import { Stepper, Button } from '../components/common';
-import { PersonalDetailsStep, ProfessionalProfileStep, KYCVerificationStep, SubmissionStep } from '../components/forms';
+import { TopNav } from '../components/layout/TopNav';
+import { Footer } from '../components/layout/Footer';
+import { Stepper } from '../components/common/Stepper';
+import { PersonalDetailsStep } from '../components/forms/PersonalDetailsStep';
+import { ProfessionalProfileStep } from '../components/forms/ProfessionalProfileStep';
+import { KYCVerificationStep } from '../components/forms/KYCVerificationStep';
+// import { SubmissionStep } from '../components/forms/SubmissionStep';
 import { useForm } from '../hooks/useForm';
 
 const registrationSteps = [

@@ -50,7 +50,7 @@ const Mixologists = () => {
           <div className="glass-card rounded-2xl p-4 flex flex-col md:flex-row items-center gap-4 shadow-xl shadow-zinc-200/50">
             <div className="relative flex-1 w-full">
               <span className="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
-              <input className="w-full pl-12 pr-4 py-3 bg-transparent border-none focus:ring-0 text-on-surface placeholder:text-outline/60 font-body" placeholder="Search by name, cocktail, or style..." type="text" />
+<input aria-label="Search mixologists by name, cocktail, or style" className="w-full pl-12 pr-4 py-3 bg-transparent border-none focus:ring-0 text-on-surface placeholder:text-outline/60 font-body" placeholder="Search by name, cocktail, or style..." type="text" />
             </div>
             <div className="flex flex-wrap md:flex-nowrap items-center gap-3 w-full md:w-auto">
               {/* Location Filter */}
@@ -81,7 +81,8 @@ const Mixologists = () => {
           {mixologists.map((mixologist) => (
             <div key={mixologist._id} className="group relative bg-surface-container-lowest rounded-xl overflow-hidden hover:scale-[1.02] transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] shadow-[0_20px_40px_rgba(153,71,0,0.04)] hover:shadow-2xl hover:shadow-primary/5">
               <div className="aspect-[4/5] overflow-hidden relative">
-                <img className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt={`Professional mixologist ${mixologist.user.name}`} src="https://via.placeholder.com/400x500?text=Mixologist" />
+                <img className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                alt={`Professional mixologist ${mixologist.user.name}`} src="https://via.placeholder.com/400x500?text=Mixologist" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
                 <div className="absolute top-6 right-6">
                   <span className="bg-white/90 backdrop-blur-md px-3 py-1 rounded-full text-[0.7rem] font-bold tracking-widest uppercase text-on-surface shadow-sm">{mixologist.specialties[0] || 'Specialist'}</span>
@@ -150,7 +151,7 @@ const Mixologists = () => {
           <div className="md:col-span-1">
             <h4 className="text-[0.75rem] tracking-widest uppercase font-bold text-orange-500 mb-6">Join the Journal</h4>
             <div className="relative group">
-              <input className="w-full bg-zinc-900 border-none rounded-xl py-3 px-4 text-white text-sm focus:ring-1 focus:ring-orange-500 placeholder:text-zinc-600" placeholder="Email Address" type="email" />
+              <input aria-label="Subscribe to newsletter with email address" className="w-full bg-zinc-900 border-none rounded-xl py-3 px-4 text-white text-sm focus:ring-1 focus:ring-orange-500 placeholder:text-zinc-600" placeholder="Email Address" type="email" />
               <button className="absolute right-2 top-1/2 -translate-y-1/2 text-orange-500 hover:text-orange-400">
                 <span className="material-symbols-outlined">arrow_forward</span>
               </button>
