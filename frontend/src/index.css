@@ -143,4 +143,41 @@ code {
   }
 }
 
+
+/* Gradient Button Class */
+.btn-primary-gradient {
+  background: linear-gradient(135deg, #ff7a00 0%, #994700 100%);
+}
+
+/* Glass Card Effect */
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+/* Ghost Border */
+.ghost-border {
+  outline: 1px solid rgba(224, 192, 175, 0.15);
+}
+
+/* Active Step Line */
+.active-step-line {
+  background: linear-gradient(90deg, #ff7a00 0%, #994700 100%);
+}
+
+/* Sidebar Active Link */
+.sidebar-link-active {
+  background: #f6f3f2;
+  color: #994700;
+  font-weight: 600;
+}
+
+/* Primary Gradient Text */
+.primary-gradient {
+  background: linear-gradient(135deg, #ff7a00 0%, #994700 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
 /* Ensure material symbols and fonts are loaded in your index.html */
