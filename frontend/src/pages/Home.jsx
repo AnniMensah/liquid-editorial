@@ -1,14 +1,14 @@
 "use client";
 
-import React from 'react';
+import { React } from 'react';
 import { useNavigate, Link } from 'react-router-dom';   
-import { TopNav } from '../components/layout/TopNav';
-import { Footer } from '../components/layout/Footer';
-import { GlassCard } from '../components/common/GlassCard';
-import { Button } from '../components/common/Button';
-import { SearchBar } from '../components/common/SearchBar';
-import { Rating } from '../components/common/Rating';
-import { featuredMixologists, categoryData, testimonials, blogPosts } from '../data/mockData';
+import TopNav from '../components/layout/TopNav';
+import Footer  from '../components/layout/Footer';
+import GlassCard  from '../components/common/GlassCard';
+// import  Button from '../components/common/Button';
+// import  SearchBar  from '../components/common/SearchBar';
+import  Rating  from '../components/common/Rating';
+import { featuredMixologists, categoryData } from '../data/mockData';
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -21,8 +21,7 @@ const HomePage = () => {
         <CategorySection categories={categoryData} navigate={navigate} />
         <FeaturedMixologistsSection mixologists={featuredMixologists} navigate={navigate} />
         <HowItWorksSection />
-        <TestimonialsSection testimonials={testimonials} />
-        <BlogSection posts={blogPosts} />
+        {/* <TestimonialsSection testimonials={testimonials} /> */}
         <CTASection navigate={navigate} />
       </main>
       <Footer />
