@@ -66,4 +66,4 @@ npm run preview  # Preview production build
 
 ## 📄 License
 
-MIT - see LICENSE
+MIT - see licen
